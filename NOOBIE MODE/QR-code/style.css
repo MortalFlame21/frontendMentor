@@ -74,15 +74,3 @@ img {
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
-
-/* @media (min-width: 992px) {
-  .qr-container {
-    width: 25%;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .qr-container {
-    width: 50%;
-  }
-} */
