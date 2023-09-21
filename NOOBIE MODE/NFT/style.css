@@ -1,0 +1,139 @@
+:root {
+  --primary-blue: hsl(215, 51%, 70%);
+  --primary-cyan: hsl(178, 100%, 50%);
+
+  --bg-dblue: hsl(217, 54%, 11%);
+  --bg-card-dblue: hsl(216, 50%, 16%);
+  --clr-line: hsl(215, 32%, 27%);
+  --clr-white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", "Roboto", sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  background-color: var(--bg-dblue);
+}
+
+.container-centre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.nft-container {
+  margin-inline: auto;
+  padding: 2rem;
+  width: min(100% - 3rem, 33ch);
+  background-color: var(--bg-card-dblue);
+  border-radius: 1rem;
+  /* border: 1px solid white; */
+}
+
+.nft-container > :not(:first-child) {
+  margin-top: 0.75rem;
+}
+
+.nft-container > hr {
+  margin: 1.25rem 0 !important;
+  border: 1px solid var(--clr-line);
+}
+
+.nft-container h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--clr-white);
+  transition: color 0.3s;
+}
+
+.nft-container h3:hover {
+  color: var(--primary-cyan);
+}
+
+.nft-container p {
+  color: var(--primary-blue);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.nft-details p {
+  font-weight: 400;
+}
+
+.nft-details .nft-price p {
+  color: var(--primary-cyan);
+}
+
+.nft-creator-details .highlight {
+  font-weight: 400;
+  color: var(--clr-white);
+  transition: color 0.3s;
+}
+
+.nft-creator-details .highlight:hover {
+  color: var(--primary-cyan);
+}
+
+.nft-container > img {
+  border-radius: 1rem;
+}
+
+.nft-container .nft-details,
+.nft-container .nft-creator-details {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.nft-container .nft-details {
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.nft-container .nft-details > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* border: 1px solid white; */
+}
+
+.nft-details > div img {
+  max-height: 1.25rem;
+  max-width: 1.25rem;
+}
+
+.nft-creator-details {
+  gap: 1rem;
+}
+
+.nft-creator-details img {
+  min-width: 2.5em;
+  max-width: 2.5em;
+  border-radius: 50%;
+  border: 1.5px solid var(--clr-white);
+}
+
+.attribution {
+  margin-top: 3rem;
+  color: white;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
