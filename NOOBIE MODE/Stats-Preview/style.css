@@ -55,13 +55,9 @@ body {
   background-color: var(--clr-violet);
 }
 
-.card__banner picture {
-}
-
 .card__banner picture > * {
   mix-blend-mode: multiply;
   opacity: 0.75;
-  object-fit: cover;
 }
 
 .card__body {
@@ -111,6 +107,10 @@ body {
   word-spacing: 1.25px;
 }
 
+.__body__stats {
+  column-gap: 0.5rem;
+}
+
 .__body__stats *:not(:first-child) {
   margin-top: 1.25rem;
 }
@@ -131,24 +131,18 @@ body {
   letter-spacing: 1.3px;
 }
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
-
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .card {
     display: flex;
-    width: min(100% - 5rem, 80ch);
+    width: min(100% - 10rem, 80ch);
+  }
+
+  .card > * {
+    flex: 1 1 50%;
   }
 
   .card .card__body {
-    flex: 1;
-    padding: 3rem 4rem;
+    padding: 2.5rem 4rem;
     text-align: left;
   }
 
@@ -164,7 +158,14 @@ body {
   }
 
   .card .card__banner {
-    flex: 1.25;
     order: 2;
   }
+}
+
+/* WHY DOES USING FLEX 1 AND SOME PADDING MAKE THAT CHILD TAKE MORE SPACE THAN EXPECTED?*/
+.attribution,
+.attribution a {
+  font-size: 11px;
+  text-align: center;
+  color: white;
 }
