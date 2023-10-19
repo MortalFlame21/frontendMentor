@@ -20,9 +20,12 @@
   padding: 0;
 }
 
-img,
 picture,
 source {
+  height: 100%;
+}
+
+img {
   display: block;
   max-width: 100%;
 }
@@ -33,136 +36,101 @@ body {
 
 .container-center {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  width: min(100% - 5rem, 40ch);
   font-family: var(--ff-inter);
-  width: min(100% - 5rem, 50ch);
   text-align: center;
   background-color: var(--clr-dds-blue);
   border-radius: 0.4rem;
   overflow: hidden;
 }
 
+.card h2,
+.card li {
+  font-family: var(--ff-lexend);
+  font-size: 1.5rem;
+  color: var(--clr-white);
+  font-weight: 700;
+}
+
+.card p {
+  font-family: var(--ff-inter);
+  color: var(--clr-t1-white);
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.card h2 {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.card li {
+  font-size: 1.33rem;
+  list-style-type: none;
+  margin-bottom: 1rem;
+}
+
+.card li:last-child {
+  margin-bottom: 0;
+}
+
 .card .highlight {
   color: var(--clr-violet);
+}
+
+.card .card__stats span {
+  display: block;
+  margin-top: 0.33rem;
+  font-family: var(--ff-inter);
+  color: var(--clr-t2-white);
+  font-size: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
 }
 
 .card__banner {
   background-color: var(--clr-violet);
 }
 
-.card__banner picture > * {
+.card__banner picture {
   mix-blend-mode: multiply;
   opacity: 0.75;
 }
 
-.card__body {
-  display: flex;
-  flex-direction: column;
-  padding: 1.75rem 1.25rem;
+.card__banner picture,
+.card__banner img {
+  width: 100%;
+  height: auto;
 }
 
-.card__body > *:not(:first-child) {
-  margin-top: 1.5rem;
+.card__banner img {
+  object-fit: cover;
 }
 
-.card__body h2,
-.card .__body__stats p {
-  font-weight: 700;
-  color: var(--clr-white);
+.card .card__details,
+.card .card__stats {
+  flex: 0 0 50%;
+  padding: 0 2rem;
 }
 
-.card__body p {
-  color: var(--clr-t1-white);
+.card .card__stats {
+  margin: 1.5rem 0;
 }
 
-.__body__details,
-.__body__stats {
-  display: flex;
-  flex-direction: column;
+@media (min-width: 50rem) {
 }
 
-.__body__details > *:not(:first-child) {
-  margin-top: 0.75rem;
-}
-
-.__body__details {
-  font-size: 1.6rem;
-}
-
-.__body__details h2 {
-  font-size: 1em;
-}
-
-.__body__details p {
-  text-wrap: balance;
-  font-size: 0.5em;
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--clr-t2-white);
-  word-spacing: 1.25px;
-}
-
-.__body__stats {
-  column-gap: 0.5rem;
-}
-
-.__body__stats *:not(:first-child) {
-  margin-top: 1.25rem;
-}
-
-.card .__body__stats {
-  font-size: 1.3em;
-}
-
-.card .__body__stats p {
-  font-size: 1em;
-}
-
-.card .__body__stats span {
-  font-weight: 400;
-  color: var(--clr-t2-white);
-  font-size: 0.5em;
-  text-transform: uppercase;
-  letter-spacing: 1.3px;
-}
-
-@media (min-width: 576px) {
-  .card {
-    display: flex;
-    width: min(100% - 10rem, 80ch);
-  }
-
-  .card > * {
-    flex: 1 1 50%;
-  }
-
-  .card .card__body {
-    padding: 2.5rem 4rem;
-    text-align: left;
-  }
-
-  .card .__body__stats {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 4rem;
-  }
-
-  .__body__stats *:not(:first-child) {
-    margin: 0;
-  }
-
-  .card .card__banner {
-    order: 2;
-  }
-}
-
-/* WHY DOES USING FLEX 1 AND SOME PADDING MAKE THAT CHILD TAKE MORE SPACE THAN EXPECTED?*/
 .attribution,
 .attribution a {
   font-size: 11px;
