@@ -56,7 +56,6 @@ body {
 .card h2,
 .card li {
   font-family: var(--ff-lexend);
-  font-size: 1.5rem;
   color: var(--clr-white);
   font-weight: 700;
 }
@@ -66,12 +65,13 @@ body {
   color: var(--clr-t1-white);
   font-weight: 400;
   line-height: 1.5;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .card h2 {
-  margin-top: 2rem;
+  font-size: 2rem;
   margin-bottom: 1.5rem;
+  text-wrap: balance;
 }
 
 .card li {
@@ -118,17 +118,39 @@ body {
   object-fit: cover;
 }
 
-.card .card__details,
-.card .card__stats {
-  flex: 0 0 50%;
-  padding: 0 2rem;
+.card__details {
+  padding: 2rem;
 }
 
-.card .card__stats {
-  margin: 1.5rem 0;
+.card__stats {
+  margin-top: 1.5rem;
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 68rem) {
+  .card {
+    flex-direction: row;
+    width: min(100% - 5rem, 100ch);
+  }
+
+  .card .card__banner {
+    flex: 0 0 50%;
+    order: 3;
+  }
+
+  .card__details h2 {
+    font-size: 2rem;
+  }
+
+  .card__details {
+    flex: 0 0 50%;
+    text-align: left;
+  }
+
+  .card__stats {
+    display: flex;
+    gap: 5rem;
+    margin-top: 3rem;
+  }
 }
 
 .attribution,
